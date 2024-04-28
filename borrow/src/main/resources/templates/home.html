@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://w3.org/1999/xhtml"
+                xmlns:th =  "http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Borrow & Read - Welcome!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Borrow & Read!</h1>
+        <p>Select your user type to proceed:</p>
+        <br>
+        <div class="button-container">
+          <form th:action="librarylogin" method="get">
+            <button type="submit" class="submit">Library</button>
+          </form>
+          <form th:action="userlogin" method="get">
+            <button type="submit" class="submit">User</button>
+          </form>
+        </div>
+      </div>
+      
+</body>
+</html>
