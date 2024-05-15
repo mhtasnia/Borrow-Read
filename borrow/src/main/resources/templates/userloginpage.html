@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <title>Borrow & Read - Welcome!</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
-
+    
 </head>
 <body>
 
     <div class="container">
         <h1>Welcome to Borrow & Read!</h1>
-        <br>
-        <h2>Select your user type to proceed</h2>
+        <h2>Select an action</h2>
         <br>
         <div class="button-container">
-          <form th:action="librarylogin" method="get">
-            <button type="submit" class="submit">Library</button>
+          <form th:action="user_reg" method="get">
+            <button type="submit" class="submit">Registration</button>
           </form>
-          <form th:action="userlogin" method="get">
-            <button type="submit" class="submit">User</button>
+          <form th:action="user_login" method="get">
+            <button type="submit" class="submit">Login</button>
           </form>
         </div>
       </div>
