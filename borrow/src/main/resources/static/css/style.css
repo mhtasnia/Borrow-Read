@@ -18,38 +18,97 @@
   }
 
 .container {
-  background-color: beige;
-  width: 500px;
+  background-color: #c3ebf5;
   margin: 50px auto;
-  padding: 30px;
+  width: 70%;
+  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   color: #000;
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-input {
+  width: 10000px; /* Adjust the width as needed */
+}
+
+
+
+
 button {
   margin-right: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color:#1e45a6;
+  color: #eff0f6;
   cursor: pointer;
+  align-items: center;
+  text-align: left; /* Add this line to align button text to the left */
 }
+
 
 button:hover {
   background-color: #ddd;
 }
-  
-h1 {
-  text-align: center; 
-  font-size: 2em; 
+h1{
+  text-align:center;
+  text-decoration: wavy;
 }
+
 h2 {
   text-align: center; 
 }
 body {
   font-family: sans-serif;
+  background-color: #c3ebf5;
   margin: 0;
   padding: 0;
 }
   
-  
+label {
+  display: block; /* Make labels on separate lines */
+  margin-bottom: 5px; /* Add space between labels and inputs */
+  font-weight: bold; /* Make labels bolder */
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%; /* Make inputs full width */
+  padding: 10px; /* Add padding to inputs */
+  border: 1px solid #ccc; /* Add border to inputs */
+  border-radius: 3px; /* Add rounded corners to inputs */
+}
+
+.bg-primary{
+  background: #1e45a6;
+  color: #eff0f6;
+}
+.text-white{
+  color: #eff0f6;
+}
+.banner{
+  height: 93vh;
+  width: 100%;
+  background: url(../img/banner.jpg);
+  background-size: cover;
+}
+
+.banner2{
+  height: 93vh;
+  width: 100%;
+  background: #336aea;
+}
