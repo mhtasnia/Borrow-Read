@@ -50,7 +50,7 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color:#1e45a6;
+  background-color:#294489;
   color: #eff0f6;
   cursor: pointer;
   align-items: center;
@@ -71,7 +71,7 @@ h2 {
 }
 body {
   font-family: sans-serif;
-  background-color: #c3ebf5;
+  background-color: #FAFAFA;
   margin: 0;
   padding: 0;
 }
@@ -94,7 +94,7 @@ textarea {
 }
 
 .bg-primary{
-  background: #1e45a6;
+  background: #2b417a;
   color: #eff0f6;
 }
 .text-white{
@@ -111,4 +111,79 @@ textarea {
   height: 93vh;
   width: 100%;
   background: #336aea;
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 60px; /* Adjust the height of your navbar */
+  bottom: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #0D7899;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.my-table {
+  margin-right: auto;  /* Move the table to the right */
+}
+.cell-width-150 {
+  width: 150px;
+}
+
+.cell-width-250 {
+  width: 250px;
+}
+
+.table-container {
+  /* Set styles for positioning and width */
+  float: right;  /* Or use margin-left: auto; (see explanation below) */
+  width: 70%;  /* Adjust width as needed */
+  padding: 10px;  /* Add padding for spacing */
+  border: 1px solid #ddd;  /* Optional border for visual separation */
 }

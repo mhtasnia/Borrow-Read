@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BorrowApplication<borrow>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.code.borrow.BorrowApplication",
+            "projectName": "borrow",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

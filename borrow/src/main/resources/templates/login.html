@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeLeaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose User Type</title>
+    <style>
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+    </style>
+</head>
+<body>
+  <section>
+    <h1 >Choose User Type to Login</h1>
+  <div class="container">
+    <div>
+      <form th:action="@{/user_login}" method="get">
+          <input type="hidden" name="userType" value="user">
+          <button type="submit">User</button>
+      </form>
+  </div>
+  <div>
+      <br>
+  </div>
+  <div>
+      <form th:action="@{/library_login}" method="get">
+          <input type="hidden" name="userType" value="library">
+          <button type="submit">Library</button>
+      </form>
+  </div>
+  
+
+  </div> 
+  </section>
+</body>
+</html>

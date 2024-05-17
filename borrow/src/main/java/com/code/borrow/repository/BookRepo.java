@@ -2,12 +2,8 @@ package com.code.borrow.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.code.borrow.entities.User;
+import com.code.borrow.entities.Book;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, Integer>{
-
-    User findByEmail(String email);
-   
+public interface BookRepo extends JpaRepository<Book, Long> {
 }

@@ -3,16 +3,17 @@ package com.code.borrow.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.code.borrow.entities.Library;
 import com.code.borrow.entities.User;
 import com.code.borrow.helper.Message;
 import com.code.borrow.repository.LibraryRepo;
 import com.code.borrow.repository.UserRepo;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -37,6 +38,26 @@ public class PageController {
         System.out.println("Signup");
         return "signup";
     }
+
+    @GetMapping("/login")
+    public String login(Model model){
+        model.addAttribute("title","Login");
+        System.out.println("Login");
+        return "login";
+    }
+    @GetMapping("/user_login")
+    public String user_login(Model model) {
+        model.addAttribute("title","Log in");
+        System.out.println("Login");
+        return "user_login";
+    }
+    @GetMapping("/library_login")
+    public String library_login(Model model) {
+        model.addAttribute("title","Log in");
+        System.out.println("Login");
+        return "library_login";
+    }
+
     @RequestMapping("/user_signup")
     public String user_signup(Model model) {
         model.addAttribute("title","Sign Up");
@@ -83,6 +104,17 @@ public class PageController {
             return "library_signup";
         }
     }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        // Invalidate the session
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        // Redirect to the login page
+        return "redirect:/login";
+    }
+    
 
 
 }

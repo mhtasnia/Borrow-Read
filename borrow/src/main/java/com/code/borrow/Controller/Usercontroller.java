@@ -11,6 +11,7 @@ public class Usercontroller {
     @RequestMapping("/index")
     public String dashboard(Model m){
         m.addAttribute("title", "User-dashboard");
-        return "normal/user_dashboard";
+        return "/user_dashboard";
     }
+    
 }

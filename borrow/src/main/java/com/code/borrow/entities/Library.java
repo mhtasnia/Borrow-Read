@@ -25,20 +25,42 @@ public class Library {
     private String l_contact;
     @Column(length = 1000)
     private String l_about;
+    @Column(length = 12)
+    private String l_password;
 
+    public String getL_password() {
+        return l_password;
+    }
+
+    public void setL_password(String l_password) {
+        this.l_password = l_password;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
     @ManyToMany(mappedBy = "libraries") // Mapped by refers to the owning side (Book)
     private List<Book> books = new ArrayList<>(); 
 
     public Library() {
     }
     
-    public Library(int l_id, String l_name, String l_address, String l_email, String l_contact, String l_about) {
+    
+
+    public Library(int l_id, String l_name, String l_address, String l_email, String l_contact, String l_about,
+            String l_password, List<Book> books) {
         this.l_id = l_id;
         this.l_name = l_name;
         this.l_address = l_address;
         this.l_email = l_email;
         this.l_contact = l_contact;
         this.l_about = l_about;
+        this.l_password = l_password;
+        this.books = books;
     }
 
     public int getL_id() {
@@ -77,5 +99,7 @@ public class Library {
     public void setL_about(String l_about) {
         this.l_about = l_about;
     }
+
+   
 
 }
