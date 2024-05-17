@@ -8,45 +8,43 @@
 <body background="white">
   <section>
     <div class="table-container">
-    <h1>Books</h1>
-    <table class="my-table"> 
-      <thead>
-        <tr>
-          <th class="cell-width-250">Cover Page</th>
-          <th class="cell-width-150">ISBN</th>
-          <th class="cell-width-150">Title</th>
-          <th class="cell-width-150">Author</th>
-          <th class="cell-width-150">Publisher</th>
-          <th class="cell-width-150">Price</th>
-          <th class="cell-width-150">Category</th>
-          <th class="cell-width-150">Edition</th>
-          <th class="cell-width-150">Available</th>
-          <th class="cell-width-50">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="book : ${books}">
-          <td>
-            <img th:src="@{'/' + ${book.cover_page}}" alt="Cover Page" style="width: 1000px; height: 2000px;" />
-          </td>
-          <td th:text="${book.ISBN}">ISBN</td>
-          <td th:text="${book.Title}">Title</td>
-          <td th:text="${book.author}">Author</td>
-          <td th:text="${book.publisher}">Publisher</td>
-          <td th:text="${book.price}">Price</td>
-          <td th:text="${book.category}">Category</td>
-          <td th:text="${book.edition}">Edition</td>
-          <td th:text="${book.available ? 'Yes' : 'No'}">Available</td>
-          <td th:text="${book.description}">Description</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    <div>
-       
+      <h1>Books</h1>
+      <table class="my-table"> 
+        <thead>
+          <tr>
+            <th class="cell-width-350">Cover Page</th>
+            <th class="cell-width-150">ISBN</th>
+            <th class="cell-width-150">Title</th>
+            <th class="cell-width-150">Author</th>
+            <th class="cell-width-150">Publisher</th>
+            <th class="cell-width-150">Price</th>
+            <th class="cell-width-150">Category</th>
+            <th class="cell-width-150">Edition</th>
+            <th class="cell-width-150">Available</th>
+            <th class="cell-width-350">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="book : ${books}">
+            <td>
+              <div>
+                <img th:src="@{'/uploads/' + ${book.cover_page}}" class="book-cover" alt="Cover Image"/>
+              </div>
+            </td>
+            <td th:text="${book.ISBN}">ISBN</td>
+            <td th:text="${book.Title}">Title</td>
+            <td th:text="${book.author}">Author</td>
+            <td th:text="${book.publisher}">Publisher</td>
+            <td th:text="${book.price}">Price</td>
+            <td th:text="${book.category}">Category</td>
+            <td th:text="${book.edition}">Edition</td>
+            <td th:text="${book.available ? 'Yes' : 'No'}">Available</td>
+            <td th:text="${book.description}">Description</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="sidebar">
-        
       <a href="/library/index">Home</a>
       <a class="active" href="/library/books">Books</a>
       <a href="/library/addbook">Add Book</a>
@@ -54,10 +52,6 @@
       <a href="#about">Orders</a>
       <a href="/logout">Logout</a>
     </div>
-    <form action="/library/addbook" method="get">
-        <button type="submit">Add More</button>
-    </form>
-    
   </section>
 </body>
 </html>

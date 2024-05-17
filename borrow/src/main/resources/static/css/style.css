@@ -174,16 +174,23 @@ div.content {
 }
 .cell-width-150 {
   width: 150px;
+  height: auto;
 }
 
-.cell-width-250 {
-  width: 250px;
+.cell-width-350 {
+  width: 350px;
+  height: auto;
 }
 
 .table-container {
   /* Set styles for positioning and width */
   float: right;  /* Or use margin-left: auto; (see explanation below) */
-  width: 70%;  /* Adjust width as needed */
+  width: 85%;  /* Adjust width as needed */
   padding: 10px;  /* Add padding for spacing */
   border: 1px solid #ddd;  /* Optional border for visual separation */
+}
+
+.book-cover{
+  width: 100px;
+  height: auto;
 }

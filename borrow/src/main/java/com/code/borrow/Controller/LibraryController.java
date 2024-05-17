@@ -49,18 +49,24 @@ public class LibraryController {
     public String addBook(@ModelAttribute Book book, @RequestParam("coverPage") MultipartFile coverPage) {
         if (!coverPage.isEmpty()) {
             try {
+                // Extract the filename and file extension
+                String originalFilename = coverPage.getOriginalFilename();
+                String[] parts = originalFilename.split("\\.");
+                String fileName = parts[0]; // Extract filename without extension
+                String fileType = parts[1]; // Extract file extension
+                
                 // Ensure the uploads directory exists
                 Path uploadPath = Paths.get(uploads);
                 if (!Files.exists(uploadPath)) {
                     Files.createDirectories(uploadPath);
                 }
-
+    
                 // Save the cover page file locally
-                Path path = uploadPath.resolve(coverPage.getOriginalFilename());
+                Path path = uploadPath.resolve(originalFilename);
                 Files.write(path, coverPage.getBytes());
-
+    
                 // Set the relative path to the cover page in the book entity
-                book.setCover_page(path.toString());
+                book.setCover_page(fileName + "." + fileType);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -68,6 +74,8 @@ public class LibraryController {
         bookRepo.save(book);
         return "redirect:/library/index";
     }
+    
+
 
     @GetMapping("/books")
     public String listBooks(Model model) {

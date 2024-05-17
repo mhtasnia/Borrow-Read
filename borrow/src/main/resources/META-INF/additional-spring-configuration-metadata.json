@@ -1,12 +1,15 @@
 [
-    {
+  {
       "properties": [
-        {
-          "name": "file.upload-dir",
-          "type": "java.lang.String",
-          "description": "A description for 'file.upload-dir'"
-        }
-      ]
-    }
-  ]
-  
+          {
+              "name": "file.upload-dir",
+              "type": "java.lang.String",
+              "description": "Specifies the directory where uploaded files will be stored."
+          }
+      ],
+      "source": {
+          "location": "application.properties",
+          "type": "properties"
+      }
+  }
+]
