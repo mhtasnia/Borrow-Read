@@ -14,15 +14,15 @@
     margin-right: 40px;
     margin-left: 40px;
     width: 150px; /* Set button width */
-  height: 50px;
+    height: 50px;
   }
 
 .container {
-  background-color: #c3ebf5;
+  
   margin: 50px auto;
   width: 70%;
   padding: 20px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 5px;
   color: #000;
 }
@@ -43,14 +43,12 @@
 }
 
 
-
-
 button {
   margin-right: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color:#294489;
+  background-color: #485FA4;
   color: #eff0f6;
   cursor: pointer;
   align-items: center;
@@ -64,6 +62,9 @@ button:hover {
 h1{
   text-align:center;
   text-decoration: wavy;
+  color: #301d6e;
+  text-shadow: #301d6e;
+  font-weight: bold;
 }
 
 h2 {
@@ -93,8 +94,8 @@ textarea {
   border-radius: 3px; /* Add rounded corners to inputs */
 }
 
-.bg-primary{
-  background: #2b417a;
+.mynv-primary{
+  background: #758FDA;
   color: #eff0f6;
 }
 .text-white{
@@ -134,7 +135,7 @@ textarea {
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #0D7899;
+  background-color: #9c90c0;
   color: white;
 }
 
@@ -187,7 +188,12 @@ div.content {
   float: right;  /* Or use margin-left: auto; (see explanation below) */
   width: 85%;  /* Adjust width as needed */
   padding: 10px;  /* Add padding for spacing */
-  border: 1px solid #ddd;  /* Optional border for visual separation */
+  border: 1px solid #ddd;
+   /* Optional border for visual separation */
+}
+
+.my-table tbody tr {
+  margin-bottom: 50px; /* Adjust this value as needed */
 }
 
 .book-cover{

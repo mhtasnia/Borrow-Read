@@ -27,6 +27,7 @@ public class User {
     @Column(length=1024)
     private String address;
     private String password;
+    private double currency = 2000;
     
 
     
@@ -34,22 +35,42 @@ public class User {
     
 
    
+    public double getCurrency() {
+        return currency;
+    }
+
+
+
+    public void setCurrency(double currency) {
+        this.currency = currency;
+    }
+
+
+
     public User() {
     }
     
     
 
+    
+
+
+
     public User(long id,
             @NotNull(message = "Name field is required") @Size(min = 2, max = 20, message = "Name should be 2 to 20 characters long") String name,
-            String email, String contact, String address, String password, String role, Boolean enabled) {
+            String email, String contact, String address, String password, double currency) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.contact = contact;
         this.address = address;
         this.password = password;
-        
+        this.currency = currency;
     }
+
+
+
+
 
 
 

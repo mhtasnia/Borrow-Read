@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body background="white">
+  <section>
+    <div class="table-container">
+      <h1>Books</h1>
+      <table class="my-table"> 
+        <thead>
+            <tr>
+                <th class="cell-width-350">Cover Page</th>
+                <th class="cell-width-150">ISBN</th>
+                <th class="cell-width-150">Title</th>
+                <th class="cell-width-150">Author</th>
+                <th class="cell-width-150">Publisher</th>
+                <th class="cell-width-150">Price</th>
+                <th class="cell-width-150">Category</th>
+                <th class="cell-width-150">Edition</th>
+                <th class="cell-width-150">Available</th>
+                <th class="cell-width-350">Description</th>
+                <th class="cell-width-150">Rental Price</th>
+                <th class="cell-width-150">Deposite</th>
+                <th class="cell-width-150">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book : ${books}">
+                <td>
+                    <div>
+                        <img th:src="@{'/uploads/' + ${book.cover_page}}" class="book-cover" alt="Cover Image"/>
+                    </div>
+                </td>
+                <td th:text="${book.ISBN}">ISBN</td>
+                <td th:text="${book.Title}">Title</td>
+                <td th:text="${book.author}">Author</td>
+                <td th:text="${book.publisher}">Publisher</td>
+                <td th:text="${book.price}">Price</td>
+                <td th:text="${book.category}">Category</td>
+                <td th:text="${book.edition}">Edition</td>
+                <td th:text="${book.available ? 'Yes' : 'No'}">Available</td>
+                <td th:text="${book.description}">Description</td>
+                <td th:text="${book.rentalPrice}">Rental Price</td>
+                <td th:text="${book.depositeamount}">Rental Price</td>
+                <!-- Button to Borrow -->
+                <td>
+                    <form action="/borrow/{bookId}" method="post">
+                        <!-- Include other form fields here -->
+                        <input type="hidden" name="bookId" value="${book.bookId}" />
+                        <button type="submit">Confirm Borrow</button>
+                    </form>
+                    
+                    
+                </td>
+            </tr>
+        </tbody>
+      </table>    
+    </div>
+    <div class="sidebar">
+        <a  href="#home">Home</a>
+        <a class="active" href="/user/books">Books</a>
+        <a href="#contact">Borrow History</a>
+        <a href="#about">Library List</a>
+        <a href="/logout">Logout</a>
+    </div>
+  </section>
+</body>
+</html>

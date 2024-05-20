@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body background="white">
+  <section>
+    <h1>Borrow Confirmation</h1>
+    <p>User's Currency: <span th:text="${userCurrency}"></span></p>
+    <p>Deposit Amount: <span th:text="${depositAmount}"></span></p>
+    
+    <form action="/confirmBorrow">
+        <input type="hidden" name="bookId" th:value="${bookId}"/>
+        <input type="submit" value="Yes"/>
+    </form>
+    
+    <form action="/cancelBorrow">
+        <input type="submit" value="No"/>
+    </form>
+</section>
+</body>
+</html>

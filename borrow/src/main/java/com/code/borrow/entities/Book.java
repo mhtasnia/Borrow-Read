@@ -29,44 +29,39 @@ public class Book {
     private int edition;
     private  boolean available;
     private String description;
+    private int l_id;
 
-    @Transient 
+    public int getL_id() {
+        return l_id;
+    }
+
+
+    public void setL_id(int l_id) {
+        this.l_id = l_id;
+    }
+
+    
     private Double rentalPrice;
 
-    @PrePersist 
+    
+    public Double depositeamount;
+    
     public void calculateRentalPrice() {
         
         double baseRentalPrice = this.getPrice() * 0.1; 
         this.rentalPrice = Math.max(baseRentalPrice, 50.0); 
         double baseDeposite =  this.getPrice() * 1.5 ;
-        this.depositeamount=Math.min(baseDeposite ,200.0 );
+        this.depositeamount=Math.max(baseDeposite ,200.0 );
     }
 
-    @Transient
-    public Double depositeamount;
+   
 
 
     public Book() {
     }
 
     
-    public Book(long book_id, String iSBN, String title, String author, String publisher, double price, String category,
-            String cover_page, int edition, boolean available, String description, Double rentalPrice,
-            Double depositeamount) {
-        this.book_id = book_id;
-        ISBN = iSBN;
-        Title = title;
-        this.author = author;
-        this.publisher = publisher;
-        this.price = price;
-        this.category = category;
-        this.cover_page = cover_page;
-        this.edition = edition;
-        this.available = available;
-        this.description = description;
-        this.rentalPrice = rentalPrice;
-        this.depositeamount = depositeamount;
-    }
+  
     @ManyToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)  // Many-to-Many with Library (optional)
     private List<Library> libraries = new ArrayList<>(); 
 
